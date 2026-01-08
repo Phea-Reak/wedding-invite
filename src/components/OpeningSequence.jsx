@@ -77,10 +77,12 @@ export const OpeningSequence = ({ onOpen }) => {
           </motion.div>
 
           {/* --- ARROW (Golden Streak) --- */}
+          {/* --- ARROW (Golden Streak) --- */}
+         {/* --- ARROW (Golden Streak) --- */}
           {(stage === 'shooting' || stage === 'impact' || stage === 'note') && (
               <motion.div
-                  className="absolute z-20 bottom-[140px]"
-                  initial={{ left: '20%', opacity: 1, scale: 0.5 }}
+                  className="absolute z-20 bottom-[200px] md:bottom-[245px]" // Updated height to match bow
+                  initial={{ left: '100px', opacity: 1, scale: 0.5 }} // Updated start pos to match bow string
                   animate={stage === 'shooting' ? { left: '75%', scale: 1 } : { left: '75%', opacity: 0 }}
                   transition={{ duration: 0.5, ease: "linear" }}
               >
@@ -114,7 +116,7 @@ export const OpeningSequence = ({ onOpen }) => {
                  <AnimatePresence>
                      {(stage === 'impact' || stage === 'note' || stage === 'opening') && (
                         <motion.g initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-                           <Heart x="30" y="0" width="30" height="30" className="text-red-500 fill-red-500 animate-bounce" />
+                           <Heart x="40" y="60" width="30" height="30" className="text-red-500 fill-red-500 animate-bounce" />
                         </motion.g>
                      )}
                  </AnimatePresence>
