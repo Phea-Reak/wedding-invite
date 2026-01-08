@@ -2,18 +2,21 @@ import React from 'react';
 
 export const CornerDecoration = ({ className }) => {
   return (
-    <div className={`absolute w-24 h-24 md:w-40 md:h-40 z-0 pointer-events-none ${className}`}>
-        {/* Since we don't have the actual SVG/PNG, this SVG mimics the 
-           "Kanok" or Khmer floral art style in Gold.
-        */}
-       <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full drop-shadow-sm opacity-80">
-          <path d="M100 0C100 55.2285 55.2285 100 0 100V80C44.1828 80 80 44.1828 80 0H100Z" fill="#fede00" />
-          <path d="M90 0C90 49.7056 49.7056 90 0 90V85C46.9442 85 85 46.9442 85 0H90Z" fill="#bfa700" />
-          <circle cx="85" cy="85" r="5" fill="#fede00" />
-          <circle cx="70" cy="92" r="3" fill="#fede00" />
-          <circle cx="92" cy="70" r="3" fill="#fede00" />
-          <path d="M60 10C65 25 75 35 90 40" stroke="#fede00" strokeWidth="2" strokeLinecap="round" />
-          <path d="M10 60C25 65 35 75 40 90" stroke="#fede00" strokeWidth="2" strokeLinecap="round" />
+    <div className={`absolute w-32 h-32 md:w-56 md:h-56 z-0 pointer-events-none opacity-60 ${className}`}>
+       {/* Simplified Floral Art Deco / Khmer Hybrid */}
+       <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full drop-shadow-sm">
+          {/* Main Leaf shape */}
+          <path d="M0 0 L100 0 C100 40 60 100 0 100 L0 0 Z" fill="currentColor" fillOpacity="0.1"/>
+          <path d="M5 5 L95 5 C90 40 55 90 5 95 L5 5 Z" stroke="currentColor" strokeWidth="1"/>
+          
+          {/* Inner details - Gold */}
+          <path d="M0 0 C40 10 70 40 80 80" stroke="#D4AF37" strokeWidth="2" fill="none" />
+          <path d="M10 0 C45 15 65 45 70 80" stroke="#D4AF37" strokeWidth="1" fill="none" />
+          
+          {/* Flowers */}
+          <circle cx="80" cy="80" r="4" fill="#D4AF37" />
+          <circle cx="65" cy="90" r="3" fill="#D4AF37" />
+          <circle cx="90" cy="65" r="3" fill="#D4AF37" />
        </svg>
     </div>
   );
