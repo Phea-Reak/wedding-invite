@@ -61,7 +61,7 @@ export default function WeddingInvite() {
             {/* Daughter */}
             <div className="text-center">
                 <p className="text-white text-lg font-bold mb-2 tracking-widest drop-shadow-md">កូនប្រុសនាម</p>
-                <h2 className="font-moul text-[#fede00] text-3xl md:text-4xl drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)]">ហ៊ាង ផល្លា</h2>
+                <h2 className="font-moul text-[#fede00] text-3xl md:text-4xl drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)]">អ៊ាង​ សុភារក្ស</h2>
             </div>
             
             {/* Center Heart Line */}
@@ -75,7 +75,7 @@ export default function WeddingInvite() {
              {/* Son */}
             <div className="text-center">
                 <p className="text-white text-lg font-bold mb-2 tracking-widest drop-shadow-md">កូនស្រីនាម</p>
-                <h2 className="font-moul text-[#fede00] text-3xl md:text-4xl drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)]">លីម សេងហ៊ាង</h2>
+                <h2 className="font-moul text-[#fede00] text-3xl md:text-4xl drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)]">ឡី​ ជិនតេយ្យ</h2>
             </div>
         </motion.div>
         
@@ -120,7 +120,7 @@ export default function WeddingInvite() {
                 <div className="border-2 border-[#fede00] rounded-[36px] p-8 md:p-12 flex flex-col items-center bg-[#9a8c78]">
                     
                     <div className="bg-[#fede00] text-[#9a8c78] px-8 py-2 rounded-full font-bold mb-6 font-moul text-lg shadow-lg">
-                         ហុង លី
+                         Ros MengHeang
                     </div>
 
                     <h3 className="text-xl font-bold mb-6 opacity-90">
