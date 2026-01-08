@@ -3,7 +3,7 @@ import { MapPin } from 'lucide-react';
 
 export const MapSection = () => {
   return (
-    <section className="py-24 px-4 bg-[#1A4D2E] text-white relative z-10">
+    <section className="py-24 px-4 bg-[#4A0404] text-white relative z-10">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="font-moul text-[#D4AF37] text-3xl md:text-4xl mb-12">ទីតាំងពិធី</h2>
         
@@ -22,7 +22,7 @@ export const MapSection = () => {
                 ></iframe>
                 
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                    <div className="bg-[#1A4D2E] text-white px-6 py-3 rounded-full font-bold shadow-lg flex items-center gap-2 animate-bounce border border-[#D4AF37]">
+                    <div className="bg-[#4A0404] text-white px-6 py-3 rounded-full font-bold shadow-lg flex items-center gap-2 animate-bounce border border-[#D4AF37]">
                         <MapPin size={20} />
                         <span>មើលផែនទី</span>
                     </div>
@@ -32,7 +32,7 @@ export const MapSection = () => {
 
         <div className="mt-12 space-y-2">
             <h3 className="font-bold text-xl font-moul text-[#D4AF37]">គេហដ្ឋានខាងកូនស្រី</h3>
-            <p className="text-[#E8F3E8] opacity-80 font-playfair tracking-wide text-lg">ភូមិភ្នំពេញ​ សង្កាត់ភ្នំពេញ ក្រុងភ្នំពេញ ខេត្តភ្នំពេញ</p>
+            <p className="text-[#E8F3E8] opacity-80 font-playfair tracking-wide text-lg">ខេត្តកំពង់ចាម</p>
         </div>
       </div>
     </section>

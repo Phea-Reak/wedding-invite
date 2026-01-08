@@ -1,66 +1,73 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Clock } from 'lucide-react';
 
 const events = [
-  { time: '០៧:០០ ព្រឹក', title: 'ពិធីហែរជំនូន', desc: 'Procession of the Groom' },
-  { time: '០៨:០០ ព្រឹក', title: 'ពិធីសែនមេបា', desc: 'Ceremony honoring ancestors' },
-  { time: '១១:០០ ថ្ងៃត្រង់', title: 'ពិធីពិសាភោជនាហារ', desc: 'Lunch Reception' },
-  { time: '០៧:០០ យប់', title: 'ពិធីកាត់នំ', desc: 'Cake Cutting Ceremony' },
+  { time: '07:00 AM', khTime: '០៧:០០ ព្រឹក', title: 'ពិធីហែរជំនូន', desc: 'Procession of the Groom' },
+  { time: '08:00 AM', khTime: '០៨:០០ ព្រឹក', title: 'ពិធីសែនមេបា', desc: 'Ceremony honoring ancestors' },
+  { time: '11:00 AM', khTime: '១១:០០ ថ្ងៃត្រង់', title: 'ពិធីពិសាភោជនាហារ', desc: 'Lunch Reception' },
+  { time: '05:00 PM', khTime: '០៥:០០ ល្ងាច', title: 'ពិធីកាត់នំ', desc: 'Cake Cutting Ceremony' },
 ];
 
 export const Timeline = () => {
   return (
-    <section className="py-24 px-4 bg-[#FFFFFF] relative z-10">
+    <section className="py-24 px-4 bg-[#FDFBF7] relative z-10">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-20">
-          <h2 className="font-moul text-[#1A4D2E] text-3xl md:text-4xl mb-4">កម្មវិធី</h2>
-          <div className="h-[2px] w-24 bg-[#D4AF37] mx-auto"></div>
+          <span className="font-script text-[#C5A059] text-3xl">The Agenda</span>
+          <h2 className="font-moul text-[#4A0404] text-3xl md:text-4xl mt-2 mb-8">កម្មវិធី</h2>
+          <div className="w-[1px] h-16 bg-[#C5A059] mx-auto"></div>
         </div>
 
         <div className="relative">
-          {/* Vertical Line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-[1px] h-full bg-[#1A4D2E]/20 hidden md:block"></div>
+          {/* Elegant Center Line */}
+          <div className="absolute left-[15px] md:left-1/2 transform md:-translate-x-1/2 w-[1px] h-full bg-[#4A0404]/20"></div>
 
-          <div className="space-y-16">
+          <div className="space-y-16 pl-10 md:pl-0">
             {events.map((event, index) => (
               <motion.div 
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.15 }}
-                className={`flex flex-col md:flex-row items-center gap-8 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
+                transition={{ duration: 0.8 }}
+                className={`flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-16 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
               >
-                <div className="flex-1 text-center md:text-right">
-                   {index % 2 === 0 && (
-                     <>
-                        <h3 className="font-moul text-xl text-[#1A4D2E]">{event.title}</h3>
-                        <p className="font-playfair text-[#6B705C] italic">{event.desc}</p>
-                     </>
-                   )}
-                   {index % 2 !== 0 && (
-                     <div className="hidden md:block font-bold text-[#D4AF37] text-2xl font-moul">{event.time}</div>
+                {/* Text Content */}
+                <div className="flex-1 text-left md:text-right">
+                   {index % 2 === 0 ? (
+                     <div className="md:text-right">
+                        <h3 className="font-moul text-lg text-[#4A0404] mb-2">{event.title}</h3>
+                        <p className="font-serif text-[#2C3E50] italic opacity-80">{event.desc}</p>
+                     </div>
+                   ) : (
+                     <div className="hidden md:block">
+                        <div className="font-moul text-[#C5A059] text-xl">{event.khTime}</div>
+                        <div className="font-serif text-[#4A0404] text-sm uppercase tracking-widest">{event.time}</div>
+                     </div>
                    )}
                 </div>
 
-                {/* Icon Circle */}
-                <div className="relative z-10 w-14 h-14 rounded-full bg-white flex items-center justify-center shadow-md border border-[#D4AF37]">
-                  <Clock className="text-[#1A4D2E] w-6 h-6" />
-                </div>
+                {/* Dot Node */}
+                <div className="absolute left-[9px] md:left-1/2 md:transform md:-translate-x-1/2 w-[13px] h-[13px] rounded-full bg-[#FDFBF7] border-2 border-[#C5A059] z-10 shadow-[0_0_0_4px_#FDFBF7]"></div>
 
-                <div className="flex-1 text-center md:text-left">
-                   {index % 2 !== 0 && (
-                     <>
-                        <h3 className="font-moul text-xl text-[#1A4D2E]">{event.title}</h3>
-                        <p className="font-playfair text-[#6B705C] italic">{event.desc}</p>
-                     </>
+                {/* Text Content Right */}
+                <div className="flex-1 text-left">
+                   {index % 2 !== 0 ? (
+                     <div>
+                        <h3 className="font-moul text-lg text-[#4A0404] mb-2">{event.title}</h3>
+                        <p className="font-serif text-[#2C3E50] italic opacity-80">{event.desc}</p>
+                     </div>
+                   ) : (
+                     <div className="hidden md:block">
+                        <div className="font-moul text-[#C5A059] text-xl">{event.khTime}</div>
+                        <div className="font-serif text-[#4A0404] text-sm uppercase tracking-widest">{event.time}</div>
+                     </div>
                    )}
-                   {index % 2 === 0 && (
-                     <div className="hidden md:block font-bold text-[#D4AF37] text-2xl font-moul">{event.time}</div>
-                   )}
-                   {/* Mobile Time display */}
-                   <div className="md:hidden font-bold text-[#D4AF37] text-xl font-moul mt-2">{event.time}</div>
+                   
+                   {/* Mobile Time */}
+                   <div className="md:hidden mt-2">
+                      <span className="font-moul text-[#C5A059] text-lg">{event.khTime}</span>
+                   </div>
                 </div>
               </motion.div>
             ))}

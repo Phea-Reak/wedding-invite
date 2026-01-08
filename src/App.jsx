@@ -12,16 +12,12 @@ import { GallerySection } from './components/GallerySection';
 export default function WeddingInvite() {
   const [isOpened, setIsOpened] = useState(false);
 
-  // Theme Colors:
-  // Bg: #E8F3E8 (Light Sage)
-  // Text Primary: #1A4D2E (Deep Forest Green)
-  // Text Accent: #D4AF37 (Gold)
-  // Secondary Bg: #FFFFFF (White)
+  // Theme: Royal Burgundy (#4A0404) & Antique Gold (#C5A059) & Cream (#FDFBF7)
 
   return (
-    <div className="relative min-h-screen bg-[#E8F3E8] font-battambang overflow-x-hidden selection:bg-[#1A4D2E] selection:text-[#E8F3E8]">
+    <div className="relative min-h-screen bg-[#FDFBF7] text-[#2C3E50] overflow-x-hidden selection:bg-[#C5A059] selection:text-white bg-texture">
       <SakuraBackground />
-      {/* Ensure you have the MusicPlayer component created or commented out if not ready */}
+      {/* Ensure MusicPlayer is created. This is the last component we haven't converted yet. */}
       <MusicPlayer />
 
       <AnimatePresence>
@@ -34,120 +30,109 @@ export default function WeddingInvite() {
             animate={{ opacity: 1 }}
             transition={{ duration: 1.5 }}
           >
-            {/* ================= SECTION 1: COVER ================= */}
+            {/* ================= SECTION 1: HERO COVER ================= */}
             <section className="min-h-screen flex flex-col items-center justify-center p-4 relative overflow-hidden">
-              <div className="absolute inset-0 bg-white/30 pointer-events-none"></div>
               
-              <CornerDecoration className="top-0 left-0 text-[#D4AF37]" />
-              <CornerDecoration className="top-0 right-0 scale-x-[-1] text-[#D4AF37]" />
+              {/* Decorative Border Frame */}
+              <div className="absolute inset-4 md:inset-8 border border-[#C5A059]/30 pointer-events-none z-20">
+                 <div className="absolute inset-1 border border-[#C5A059]/20"></div>
+                 <CornerDecoration className="top-0 left-0 text-[#C5A059]" />
+                 <CornerDecoration className="top-0 right-0 scale-x-[-1] text-[#C5A059]" />
+                 <CornerDecoration className="bottom-0 left-0 scale-y-[-1] text-[#C5A059]" />
+                 <CornerDecoration className="bottom-0 right-0 scale-[-1] text-[#C5A059]" />
+              </div>
 
+              {/* Main Content */}
               <motion.div
-                initial={{ y: -30, opacity: 0 }}
+                initial={{ y: 30, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 1 }}
-                className="z-10 text-center mt-12 md:mt-0"
+                className="z-10 text-center relative mt-10 md:mt-0"
               >
-                <h1 className="font-moul text-[#1A4D2E] text-3xl md:text-5xl lg:text-6xl mb-12 drop-shadow-sm tracking-wide leading-relaxed p-2">
+                <div className="mb-6">
+                    <span className="font-script text-[#C5A059] text-3xl md:text-5xl">The Wedding of</span>
+                </div>
+                
+                <h1 className="font-moul text-[#4A0404] text-3xl md:text-5xl lg:text-6xl mb-8 drop-shadow-sm tracking-wide leading-relaxed">
                   សិរីសួស្ដីអាពាហ៍ពិពាហ៍
                 </h1>
-              </motion.div>
 
-              {/* Couple Image Placeholder */}
-              <motion.div
-                initial={{ scale: 0.8, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ delay: 0.3, duration: 1, type: "spring" }}
-                className="relative w-64 h-64 md:w-80 md:h-96 z-10 mb-12"
-              >
-                <div className="w-full h-full rounded-full md:rounded-[100px] overflow-hidden border-4 border-[#D4AF37] shadow-xl bg-white relative group ring-4 ring-[#1A4D2E]/10">
-                  <img
-                    src="sweet.png"
-                    alt="Couple"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#1A4D2E]/40 to-transparent"></div>
-                </div>
-                {/* Decorative Elements */}
-                <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-[#D4AF37] rounded-full -z-10 opacity-20 blur-xl animate-pulse"></div>
-              </motion.div>
-
-              {/* Names Section */}
-              <motion.div
-                initial={{ y: 50, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.6 }}
-                className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-16 w-full max-w-4xl z-10"
-              >
-                {/* Groom */}
-                <div className="text-center">
-                  <p className="text-[#6B705C] text-lg font-bold mb-2 tracking-widest uppercase font-playfair">កូនស្រីនាម</p>
-                  <h2 className="font-moul text-[#1A4D2E] text-3xl md:text-4xl drop-shadow-sm">ស៊ុន​ សារ៉េត</h2>
-                </div>
-
-                {/* Center Heart Line */}
-                <div className="hidden md:flex flex-col items-center px-4">
-                  <div className="w-[1px] h-12 bg-[#D4AF37] mb-2"></div>
-                  <Heart className="text-[#D4AF37] fill-[#D4AF37] w-8 h-8 animate-pulse" />
-                  <div className="w-[1px] h-12 bg-[#D4AF37] mt-2"></div>
-                </div>
-                <Heart className="md:hidden text-[#D4AF37] fill-[#D4AF37] w-8 h-8 animate-pulse my-2" />
-
-                {/* Bride */}
-                <div className="text-center">
-                  <p className="text-[#6B705C] text-lg font-bold mb-2 tracking-widest uppercase font-playfair">កូនប្រុសនាម</p>
-                  <h2 className="font-moul text-[#1A4D2E] text-3xl md:text-4xl drop-shadow-sm">ហ៊ាង​ ផល្លា</h2>
-                </div>
-              </motion.div>
-
-              <div className="w-full max-w-md h-[1px] bg-gradient-to-r from-transparent via-[#1A4D2E] to-transparent mt-16 opacity-30"></div>
-            </section>
-
-            {/* ================= SECTION 2: INVITATION CARD ================= */}
-            <section className="min-h-screen flex flex-col items-center justify-center p-6 relative z-10 bg-[#FFFFFF]">
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.03] overflow-hidden">
-                <span className="font-playfair text-[200px] md:text-[500px] text-[#1A4D2E] whitespace-nowrap select-none italic">L & R</span>
-              </div>
-              
-              <motion.div
-                initial={{ scale: 0.9, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true, margin: "-100px" }}
-                className="w-full max-w-xl text-center z-10"
-              >
-                <div className="mb-10">
-                   <h2 className="font-moul text-[#D4AF37] text-2xl md:text-4xl mb-2">សូមគោរពអញ្ជើញ</h2>
-                   <p className="font-playfair text-[#6B705C] italic">Save the Date</p>
-                </div>
-
-                <div className="bg-[#E8F3E8] p-8 md:p-12 rounded-t-[200px] rounded-b-[20px] shadow-2xl relative border border-[#1A4D2E]/10">
-                    <div className="absolute top-8 left-1/2 -translate-x-1/2">
-                         <div className="w-16 h-1 bg-[#1A4D2E] rounded-full mb-1"></div>
-                         <div className="w-8 h-1 bg-[#D4AF37] rounded-full mx-auto"></div>
+                {/* Couple Image - Arch Shape */}
+                <motion.div
+                    initial={{ scale: 0.9, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ delay: 0.4, duration: 1.2 }}
+                    className="relative mx-auto w-64 h-80 md:w-80 md:h-[500px] mb-10"
+                >
+                    <div className="absolute inset-0 rounded-t-[160px] border-[1px] border-[#C5A059] translate-x-2 translate-y-2"></div>
+                    <div className="w-full h-full rounded-t-[160px] overflow-hidden bg-[#4A0404] relative shadow-2xl">
+                        <img
+                            src="reakandtey.jpg"
+                            alt="Couple"
+                            className="w-full h-full object-cover opacity-90 hover:scale-105 transition-transform duration-[2s]"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#4A0404]/60 via-transparent to-transparent"></div>
                     </div>
+                </motion.div>
 
-                    <div className="mt-12 flex flex-col items-center">
-                        <div className="bg-[#1A4D2E] text-white px-8 py-3 rounded-full font-bold mb-8 font-moul text-lg shadow-lg tracking-wider">
-                          អ៊ាង​ ​​សុភារក្ស 
-                        </div>
-                        <h3 className="text-xl font-bold mb-8 text-[#586F58] font-battambang leading-relaxed">
-                          កូនប្រុស កូនស្រី របស់យើងខ្ញុំ ដែលនឹងប្រព្រឹត្តទៅនៅ
-                        </h3>
-                        
-                        <div className="border-y border-[#D4AF37]/50 py-8 w-full">
-                             <p className="font-moul text-[#1A4D2E] text-xl md:text-3xl leading-relaxed">
-                             ថ្ងៃ សុក្រ ទី ០៩ ខែ មករា <br /> ឆ្នាំ ២០២៦
-                            </p>
-                        </div>
-                        
-                        <div className="mt-8">
-                           <p className="font-moul text-[#D4AF37] text-xl">វេលាម៉ោង ៦:០០ ល្ងាច</p>
-                        </div>
-                    </div>
+                {/* Names */}
+                <div className="flex flex-col items-center justify-center gap-2 relative">
+                    <h2 className="font-moul text-[#C5A059] text-2xl md:text-4xl">អ៊ាង​ សុភារក្ស</h2>
+                    <span className="font-script text-[#4A0404] text-4xl mx-4">&</span>
+                    <h2 className="font-moul text-[#C5A059] text-2xl md:text-4xl">ឡី​ ជិនតេយ្យ</h2>
                 </div>
               </motion.div>
             </section>
-            
+
+            {/* ================= SECTION 2: FORMAL INVITATION ================= */}
+            <section className="py-24 px-6 bg-[#4A0404] relative text-[#FDFBF7]">
+               <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/black-linen.png')]"></div>
+               
+               <motion.div 
+                 initial={{ opacity: 0, y: 30 }}
+                 whileInView={{ opacity: 1, y: 0 }}
+                 transition={{ duration: 0.8 }}
+                 viewport={{ once: true }}
+                 className="max-w-2xl mx-auto text-center border border-[#C5A059] p-8 md:p-16 relative"
+               >
+                  {/* Decorative corner lines */}
+                  <div className="absolute top-2 left-2 w-16 h-16 border-t border-l border-[#C5A059]"></div>
+                  <div className="absolute top-2 right-2 w-16 h-16 border-t border-r border-[#C5A059]"></div>
+                  <div className="absolute bottom-2 left-2 w-16 h-16 border-b border-l border-[#C5A059]"></div>
+                  <div className="absolute bottom-2 right-2 w-16 h-16 border-b border-r border-[#C5A059]"></div>
+
+                  <p className="font-script text-3xl text-[#C5A059] mb-6">Save the Date</p>
+                  
+                  <h2 className="font-moul text-2xl md:text-4xl mb-8 leading-relaxed">
+                    សូមគោរពអញ្ជើញ
+                  </h2>
+                  
+                  <p className="text-lg md:text-xl font-khmer mb-8 opacity-90 leading-loose">
+                    ជាកិត្តិយស សូមអញ្ជើញភ្ញៀវកិត្តិយសទាំងអស់ចូលរួមក្នុងពិធីមង្គលការ<br/>
+                    របស់កូនប្រុស កូនស្រី របស់យើងខ្ញុំ
+                  </p>
+
+                  <div className="py-8 border-t border-b border-[#C5A059]/30 my-8">
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                          <div>
+                              <p className="uppercase tracking-widest text-xs text-[#C5A059] mb-2">Friday</p>
+                              <p className="font-moul text-3xl">០៩</p>
+                          </div>
+                          <div className="border-l border-r border-[#C5A059]/30 px-4 md:border-t-0 md:border-b-0 border-t border-b py-4 md:py-0">
+                              <p className="uppercase tracking-widest text-xs text-[#C5A059] mb-2">January</p>
+                              <p className="font-moul text-2xl">មករា</p>
+                          </div>
+                          <div>
+                              <p className="uppercase tracking-widest text-xs text-[#C5A059] mb-2">2026</p>
+                              <p className="font-moul text-3xl">២០២៦</p>
+                          </div>
+                      </div>
+                  </div>
+
+                  <p className="font-moul text-[#C5A059] text-xl">វេលាម៉ោង ៦:០០ ល្ងាច</p>
+               </motion.div>
+            </section>
+
             {/* ================= SECTION: TIMELINE ================= */}
             <Timeline />
 
@@ -157,61 +142,40 @@ export default function WeddingInvite() {
             {/* ================= SECTION: MAP ================= */}
             <MapSection />
 
-            {/* ================= SECTION 3: KHMER THANKS ================= */}
-            <section className="min-h-screen flex items-center justify-center p-6 relative z-10 bg-[#E8F3E8]">
-              <motion.div
-                initial={{ y: 50, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-                className="max-w-3xl w-full relative bg-white p-2 shadow-2xl"
-              >
-                <div className="border-2 border-[#1A4D2E] p-8 md:p-14 text-center h-full flex flex-col items-center justify-center relative outline outline-1 outline-offset-4 outline-[#D4AF37]">
-                  
-                  <div className="font-moul text-[#1A4D2E] text-xl md:text-3xl mb-8 pb-4 border-b border-[#D4AF37]">
-                    សេចក្ដីថ្លែងអំណរគុណ
-                  </div>
+            {/* ================= SECTION 3: THANK YOU ================= */}
+            <section className="min-h-[80vh] flex flex-col items-center justify-center p-8 bg-[#FDFBF7] relative">
+               <div className="w-full h-full absolute inset-0 opacity-[0.03] pointer-events-none flex items-center justify-center">
+                   <h1 className="font-script text-[15rem] text-[#4A0404]">Thank You</h1>
+               </div>
 
-                  <p className="text-[#586F58] text-lg md:text-2xl leading-loose font-battambang font-medium">
-                    សូមថ្លែងអំណរគុណ យ៉ាងជ្រាលជ្រៅចំពោះការអញ្ជើញចូលរួមជាភ្ញៀវកិត្តិយស
-                    ក្នុងពិធី អាពាហ៍ពិពាហ៍ កូនប្រុសកូនស្រីរបស់យើងខ្ញុំ សូមជូនពរ
-                    តែសេចក្ដីសុខសុភមង្គលគ្រប់ពេលវេលា វេលាកុំបីឃ្លៀងឃ្លាតឡើយ ។
-                  </p>
-
-                  <div className="mt-12">
-                     <Heart className="w-12 h-12 text-[#D4AF37] fill-[#D4AF37] mx-auto animate-bounce" />
-                     <p className="font-moul text-[#1A4D2E] text-xl mt-4">សូមអរគុណ !</p>
-                  </div>
-                </div>
-              </motion.div>
-            </section>
-
-            {/* ================= SECTION 4: ENGLISH THANKS ================= */}
-            <section className="min-h-[60vh] flex flex-col items-center justify-center p-8 relative z-10 text-center pb-24 bg-[#1A4D2E] text-[#E8F3E8]">
-              
-              <div className="w-full max-w-4xl border-t border-[#D4AF37]/30 mb-12"></div>
-
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
+               <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 1 }}
                 viewport={{ once: true }}
-                className="max-w-3xl"
-              >
-                <h2 className="text-[#D4AF37] font-playfair text-4xl md:text-6xl mb-12 italic">
-                  With Gratitude
-                </h2>
+                className="max-w-3xl text-center relative z-10"
+               >
+                   <Heart className="w-12 h-12 text-[#C5A059] fill-[#C5A059] mx-auto mb-8" />
+                   
+                   <h2 className="font-moul text-[#4A0404] text-2xl md:text-4xl mb-8">
+                     សេចក្ដីថ្លែងអំណរគុណ
+                   </h2>
 
-                <p className="text-[#E8F3E8] text-lg md:text-2xl font-playfair leading-loose opacity-90 mb-16 px-4 font-light">
-                  "We express our deepest thanks for the honor of your presence at the Wedding Ceremony
-                  of our son and daughter. May you encounter only happiness and prosperity at all times."
-                </p>
+                   <p className="font-khmer text-[#2C3E50] text-lg md:text-xl leading-loose mb-12">
+                     សូមថ្លែងអំណរគុណ យ៉ាងជ្រាលជ្រៅចំពោះការអញ្ជើញចូលរួមជាភ្ញៀវកិត្តិយស
+                     ក្នុងពិធី អាពាហ៍ពិពាហ៍ កូនប្រុសកូនស្រីរបស់យើងខ្ញុំ ។ វត្តមានរបស់លោកអ្នក
+                     គឺជាកិត្តិយសដ៏ឧត្តុង្គឧត្តម និងជាសាក្សីនៃសេចក្តីស្រលាញ់របស់យើងខ្ញុំ។
+                   </p>
 
-                <button className="bg-[#D4AF37] text-[#1A4D2E] px-8 py-3 rounded-sm font-moul text-lg hover:bg-white transition-colors duration-300">
-                  Thank You
-                </button>
-              </motion.div>
+                   <div className="inline-block border-b-2 border-[#C5A059] pb-2">
+                       <p className="font-script text-4xl text-[#4A0404]"> You & Family</p>
+                   </div>
+               </motion.div>
             </section>
+            
+            <footer className="bg-[#4A0404] text-[#C5A059] py-8 text-center text-sm font-khmer">
+                <p>&copy; 2026 Save The Date. All rights reserved.</p>
+            </footer>
+
           </motion.div>
         )}
       </AnimatePresence>

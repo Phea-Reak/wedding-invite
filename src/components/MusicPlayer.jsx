@@ -68,7 +68,7 @@ export const MusicPlayer = () => {
       
       <button
         onClick={togglePlay}
-        className="bg-pink-500 hover:bg-pink-600 text-white p-3 rounded-full shadow-lg transition-all transform hover:scale-105 animate-bounce-slow"
+        className="bg-black-500 hover:bg-yellow-500 text-blue p-3 rounded-full shadow-lg transition-all transform hover:scale-105 animate-bounce-slow"
         aria-label={isPlaying ? "Pause Music" : "Play Music"}
       >
         {isPlaying ? <Pause size={24} /> : <Music size={24} />}
