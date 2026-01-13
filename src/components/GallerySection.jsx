@@ -7,7 +7,14 @@ const photos = [
   "tey.png", // Landscape
   "teytey.jpg", // Portrait
   "reakkk.JPG", // Landscape
-  "nhreak.JPG",  // Almost Square
+  "nhreak.JPG", 
+  "teyyy.jpg",
+  "teyy.jpg",
+  "reqkk.jpg",
+  "reqkkkk.jpg", 
+
+
+
 ];
 
 export const GallerySection = () => {
