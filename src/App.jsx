@@ -115,8 +115,8 @@ export default function WeddingInvite() {
                   <div className="py-8 border-t border-b border-[#C5A059]/30 my-8">
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
                           <div>
-                              <p className="uppercase tracking-widest text-xs text-[#C5A059] mb-2">Friday</p>
-                              <p className="font-moul text-3xl">០៩</p>
+                              <p className="uppercase tracking-widest text-xs text-[#C5A059] mb-2">thursday</p>
+                              <p className="font-moul text-3xl">១៥</p>
                           </div>
                           <div className="border-l border-r border-[#C5A059]/30 px-4 md:border-t-0 md:border-b-0 border-t border-b py-4 md:py-0">
                               <p className="uppercase tracking-widest text-xs text-[#C5A059] mb-2">January</p>
